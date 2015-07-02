@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Ejemplo Brython</title>
+    </head>
+    <body onload="brython()">
+
+            <div style="display:inline-block;width: 20px;height: 20px;background: #4443ff" id="color1"></div>
+            <div style="display:inline-block;width: 20px;height: 20px;background: #e3821f" id="color2"></div>
+            <div style="display:inline-block;width: 20px;height: 20px;background: black" id="color3"></div>
+            <h1 style="display: inline-block;" id="saludo">Pythoniza.me</h1>
+        <script src="brython.js"></script>
+
+        <script type="text/python">
+            from browser import document as doc,alert
+
+            def change_1():
+                doc["saludo"].style.color="#4443ff"
+
+            def change_2():
+                doc["saludo"].style.color="#e3821f"
+
+            def change_3():
+                doc["saludo"].style.color="black"
+
+            doc["color1"].bind("click",change_1)
+            doc["color2"].bind("click",change_2)
+            doc["color3"].bind("click",change_3)
+        </script>
+    </body>
+</html>
